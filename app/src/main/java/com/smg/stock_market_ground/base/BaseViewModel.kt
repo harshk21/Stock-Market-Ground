@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 
 /**
  * Base view-model for handling states
-**/
+ **/
 
 open class BaseViewModel : ViewModel() {
 

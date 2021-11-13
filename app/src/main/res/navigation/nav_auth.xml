@@ -9,19 +9,31 @@
         android:id="@+id/welcomeScreen"
         android:name="com.smg.stock_market_ground.ui.fragments.authFragments.WelcomeScreen"
         android:label="fragment_welcome_screen"
-        tools:layout="@layout/fragment_welcome_screen" >
+        tools:layout="@layout/fragment_welcome_screen">
         <action
             android:id="@+id/action_welcomeScreen_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/welcomeScreen"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_welcomeScreen_to_logInFragment"
-            app:destination="@id/logInFragment" />
+            app:destination="@id/logInFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/welcomeScreen"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
         android:name="com.smg.stock_market_ground.ui.fragments.authFragments.LogInFragment"
         android:label="fragment_log_in"
-        tools:layout="@layout/fragment_log_in" >
+        tools:layout="@layout/fragment_log_in">
         <action
             android:id="@+id/action_logInFragment_to_nav_dashboard"
             app:destination="@id/nav_dashboard" />
@@ -30,7 +42,7 @@
         android:id="@+id/signUpFragment"
         android:name="com.smg.stock_market_ground.ui.fragments.authFragments.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_nav_dashboard"
             app:destination="@id/nav_dashboard" />

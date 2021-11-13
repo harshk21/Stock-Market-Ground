@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="@dimen/_12sdp"
     tools:context=".ui.fragments.authFragments.LogInFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_34sdp"
+        android:padding="@dimen/_16sdp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.smg.stock_market_ground.utils.customViews.textViews.TextViewBold
+        android:id="@+id/tv_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:text="@string/welcome_back"
+        android:textAlignment="center"
+        android:textColor="@color/stroke"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_email"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:background="@drawable/et_background_main"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/enter_you_email"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="14dp"
+        android:textColor="@color/stroke"
+        android:textColorHint="@color/stroke"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_header"
+        app:layout_constraintStart_toStartOf="@+id/tv_header"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_pass"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/et_background_main"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/dots"
+        android:inputType="textPassword"
+        android:paddingHorizontal="14dp"
+        android:textColor="@color/stroke"
+        android:textColorHint="@color/stroke"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
+        app:layout_constraintStart_toStartOf="@+id/et_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <com.smg.stock_market_ground.utils.customViews.textViews.TextViewBold
+        android:id="@+id/textViewBold3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="@string/forgot_password"
+        android:textColor="@color/stroke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:background="@drawable/bt_background_white"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBold3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

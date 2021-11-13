@@ -14,6 +14,7 @@ inline fun <reified T : Activity> Context.startActivity(block: Intent.() -> Unit
 fun Fragment.makeSnackBar(view: View, message: String) {
     Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
 }
+
 fun Context.makeSnackBar(view: View, message: String) {
     Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
 }

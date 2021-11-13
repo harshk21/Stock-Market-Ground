@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">Stock Market Ground</string>
-    <string name="welcome_to_stock_market_ground">Welcome to Stock Market Ground</string>
+    <string name="stock_market_ground">Stock Market Ground</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="here_you_play_win_and_earn">Follow experts, discover\nnew strategies, and build your\nportfolio like a pro</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="enter_you_email">Enter you email</string>
+    <string name="dots">●●●●●●●●●●</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="enter_your_account_detail">Enter your\naccount detail.</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="i_agree_to_smg_terms_of_service">I agree to SMG Terms of Service</string>
+    <string name="bullet_point_string">• Terms of Service \n• Privacy Policy</string>
+    <string name="keep_me_promotions_string">Keep me updated about SMG\nnews and promotions.</string>
 </resources>

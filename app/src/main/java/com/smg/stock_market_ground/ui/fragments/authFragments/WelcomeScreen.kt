@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import com.smg.stock_market_ground.R
 import com.smg.stock_market_ground.databinding.FragmentWelcomeScreenBinding
 
 class WelcomeScreen : Fragment() {
@@ -19,5 +21,17 @@ class WelcomeScreen : Fragment() {
         return welBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        allCLicks()
+    }
 
+    private fun allCLicks() {
+        welBinding.logIn.setOnClickListener {
+            it.findNavController().navigate(R.id.action_welcomeScreen_to_logInFragment)
+        }
+        welBinding.signUp.setOnClickListener {
+            it.findNavController().navigate(R.id.action_welcomeScreen_to_signUpFragment)
+        }
+    }
 }

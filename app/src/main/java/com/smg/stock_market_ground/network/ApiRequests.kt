@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiRequests {
     private var retrofit: Retrofit
 
-    init{
+    init {
         retrofit = Retrofit.Builder().baseUrl(Constants.BASE_URL).client(clientRequest())
             .addConverterFactory(
                 GsonConverterFactory.create()

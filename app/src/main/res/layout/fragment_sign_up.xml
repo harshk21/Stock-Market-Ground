@@ -1,14 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:paddingHorizontal="@dimen/_12sdp"
     tools:context=".ui.fragments.authFragments.SignUpFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_34sdp"
+        android:padding="@dimen/_16sdp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.smg.stock_market_ground.utils.customViews.textViews.TextViewBold
+        android:id="@+id/tv_header_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:text="@string/enter_your_account_detail"
+        android:textAlignment="center"
+        android:textColor="@color/stroke"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_first_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/et_background_main"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/first_name"
+        android:inputType="textPersonName"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/stroke"
+        android:textColorHint="@color/stroke"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header_signup" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/et_background_main"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/last_name"
+        android:inputType="textPersonName"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/stroke"
+        android:textColorHint="@color/stroke"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_first_name" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_email_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:background="@drawable/et_background_main"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/enter_you_email"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/stroke"
+        android:textColorHint="@color/stroke"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_last_name" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_password_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:background="@drawable/et_background_main"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/dots"
+        android:inputType="textPassword"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/stroke"
+        android:textColorHint="@color/stroke"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_signup" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cb_terms_agree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:buttonTint="@color/stroke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password_signup"
+        tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_agree_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/i_agree_to_smg_terms_of_service"
+        android:textColor="@color/stroke"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/cb_terms_agree"
+        app:layout_constraintStart_toEndOf="@+id/cb_terms_agree"
+        app:layout_constraintTop_toTopOf="@+id/cb_terms_agree" />
+
+    <com.smg.stock_market_ground.utils.customViews.textViews.TextViewBold
+        android:id="@+id/tv_agree_extended"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:text="@string/bullet_point_string"
+        android:textColor="@color/stroke"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_agree_first"
+        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintStart_toStartOf="@+id/tv_agree_first"
+        app:layout_constraintTop_toBottomOf="@+id/tv_agree_first" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cb_keep_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:buttonTint="@color/stroke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_agree_extended"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_keep_promotions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/keep_me_promotions_string"
+        android:textColor="@color/stroke"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/cb_keep_me"
+        app:layout_constraintStart_toEndOf="@+id/cb_keep_me"
+        app:layout_constraintTop_toTopOf="@+id/cb_keep_me" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_28sdp"
+        android:background="@drawable/bt_background_white"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/signup"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_keep_promotions" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

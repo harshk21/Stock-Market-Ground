@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
         splashTime()
     }
 
-    private fun splashTime(){
+    private fun splashTime() {
         Timer().schedule(object : TimerTask() {
             override fun run() {
                 startActivity<AuthActivity>()
