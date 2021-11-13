@@ -30,6 +30,7 @@ class LogInFragment : Fragment() {
         logInBinding.ivBack.setOnClickListener {
             it.findNavController().navigateUp()
         }
+
     }
 
 
