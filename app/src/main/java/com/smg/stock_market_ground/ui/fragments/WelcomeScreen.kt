@@ -1,4 +1,4 @@
-package com.smg.stock_market_ground.ui.fragments.authFragments
+package com.smg.stock_market_ground.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.smg.stock_market_ground.R
 import com.smg.stock_market_ground.databinding.FragmentWelcomeScreenBinding
+import com.softradix.financial_calculator.base.BaseFragment
 
-class WelcomeScreen : Fragment() {
+class WelcomeScreen : BaseFragment() {
 
     private lateinit var welBinding: FragmentWelcomeScreenBinding
 

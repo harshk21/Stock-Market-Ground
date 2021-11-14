@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.smg.stock_market_ground.databinding.ActivitySplashBinding
 import com.smg.stock_market_ground.utils.Constants
 import com.smg.stock_market_ground.utils.startActivity
+import com.softradix.financial_calculator.base.BaseActivity
 import java.util.*
 
 @SuppressLint("CustomSplashScreen")
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
 
     private lateinit var bindingSplash: ActivitySplashBinding
 
