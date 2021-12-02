@@ -1,4 +1,4 @@
-package com.softradix.financial_calculator.base
+package com.smg.stock_market_ground.base
 
 import android.content.Intent
 import android.os.Bundle

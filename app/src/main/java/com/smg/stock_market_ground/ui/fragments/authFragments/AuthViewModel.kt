@@ -9,6 +9,7 @@ class AuthViewModel : BaseViewModel() {
 
     val logInResponse = MutableLiveData<UsersModel>()
     val signUpResponse = MutableLiveData<UsersModel>()
+    val passwordResetResponse = MutableLiveData<Boolean>()
 
     fun logIn(map: HashMap<String, String>) {
         isLoading.value = true
@@ -18,7 +19,7 @@ class AuthViewModel : BaseViewModel() {
                 logInResponse.value = it
             }, {
                 isLoading.value = false
-                apiErrorResponse.value = it.localizedMessage
+                apiErrorResponse.value = it.message
             }, map
         )
     }
@@ -30,9 +31,21 @@ class AuthViewModel : BaseViewModel() {
             signUpResponse.value = it
         }, {
             isLoading.value = false
-            apiErrorResponse.value = it.localizedMessage
+            apiErrorResponse.value = it.message
         }, map)
     }
+
+    fun passwordReset(email: String){
+        isLoading.value = true
+        AuthRequestRepo.passwordReset({
+            isLoading.value = false
+            passwordResetResponse.value = true
+        }, failure = {
+            isLoading.value = false
+            passwordResetResponse.value = false
+        },email)
+    }
+
 
 
 }

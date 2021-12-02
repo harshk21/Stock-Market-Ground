@@ -10,4 +10,5 @@ object Constants {
     const val IS_DISCOVER = "isDiscover"
     const val IS_SAVED = "isSaved"
     const val USER_CHECK = "isLoggedIn"
+    const val SENT_MAIL = "Mail Sent Successfully"
 }

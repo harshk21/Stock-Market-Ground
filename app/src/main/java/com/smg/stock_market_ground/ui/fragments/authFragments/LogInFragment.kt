@@ -9,13 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.google.gson.Gson
+import com.smg.stock_market_ground.R
+import com.smg.stock_market_ground.base.BaseFragment
 import com.smg.stock_market_ground.databinding.FragmentLogInBinding
 import com.smg.stock_market_ground.ui.activities.DashBoardActivity
 import com.smg.stock_market_ground.utils.Constants
 import com.smg.stock_market_ground.utils.SharedPrefs.Companion.setBoolean
 import com.smg.stock_market_ground.utils.SharedPrefs.Companion.setString
 import com.smg.stock_market_ground.utils.makeSnackBar
-import com.softradix.financial_calculator.base.BaseFragment
 import java.util.regex.Pattern
 
 class LogInFragment : BaseFragment() {
@@ -57,6 +58,10 @@ class LogInFragment : BaseFragment() {
 
         logInBinding.btLogin.setOnClickListener {
             login()
+        }
+
+        logInBinding.tvReset.setOnClickListener {
+            it.findNavController().navigate(R.id.action_logInFragment_to_forgetPasswordFragment)
         }
 
     }
@@ -105,13 +110,13 @@ class LogInFragment : BaseFragment() {
                     callActivity(activity as AppCompatActivity, DashBoardActivity())
                     setString(Constants.DATA, Gson().toJson(it))
                     setString(Constants.TOKEN, it.userToken)
-                    setBoolean(true, isWel = false)
+                    setBoolean(isLog = true, isWel = false)
                 }
             }
         }
         mViewModel.apiErrorResponse.observe(this) {
             it?.let {
-                makeSnackBar(mView,it)
+                makeSnackBar(mView, it)
             }
         }
         mViewModel.isLoading.observe(this) {

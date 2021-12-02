@@ -2,6 +2,7 @@ package com.smg.stock_market_ground.ui.fragments.authFragments
 
 import com.smg.stock_market_ground.model.UsersModel
 import com.smg.stock_market_ground.network.ApiRequests
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,6 +47,23 @@ object AuthRequestRepo {
 
         })
 
+    }
+
+    fun passwordReset(
+        success: (ResponseBody) -> Unit,
+        failure: (Throwable) ->Unit,
+        email: String
+    ) {
+        apiService.passwordReset(email).enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                response.body()?.let { success(it) }
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                failure(t)
+            }
+
+        })
     }
 
 

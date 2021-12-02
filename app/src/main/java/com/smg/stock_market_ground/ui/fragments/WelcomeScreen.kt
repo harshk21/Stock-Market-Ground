@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.smg.stock_market_ground.R
+import com.smg.stock_market_ground.base.BaseFragment
 import com.smg.stock_market_ground.databinding.FragmentWelcomeScreenBinding
-import com.softradix.financial_calculator.base.BaseFragment
 
 class WelcomeScreen : BaseFragment() {
 
