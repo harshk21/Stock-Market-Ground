@@ -1,10 +1,10 @@
 package com.smg.stock_market_ground.ui.activities
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.smg.stock_market_ground.databinding.ActivityDashBoardBinding
+import com.smg.stock_market_ground.base.BaseActivity
 
-class DashBoardActivity : AppCompatActivity() {
+class DashBoardActivity : BaseActivity() {
 
     private lateinit var dashBoardBinding: ActivityDashBoardBinding
 

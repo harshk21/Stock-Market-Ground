@@ -1,10 +1,10 @@
 package com.smg.stock_market_ground.ui.activities
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.smg.stock_market_ground.databinding.ActivityAuthBinding
+import com.smg.stock_market_ground.base.BaseActivity
 
-class AuthActivity : AppCompatActivity() {
+class AuthActivity : BaseActivity() {
 
     private lateinit var authBinding: ActivityAuthBinding
 
