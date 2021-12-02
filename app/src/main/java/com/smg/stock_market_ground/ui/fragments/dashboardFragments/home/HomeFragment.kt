@@ -11,6 +11,7 @@ import com.smg.stock_market_ground.databinding.FragmentHomeBinding
 import com.smg.stock_market_ground.ui.activities.AuthActivity
 import com.smg.stock_market_ground.utils.Constants
 import com.smg.stock_market_ground.utils.SharedPrefs
+import com.smg.stock_market_ground.utils.customViews.customLoader.CustomViewLoader
 import com.smg.stock_market_ground.utils.makeSnackBar
 
 class HomeFragment : BaseFragment() {
@@ -20,6 +21,8 @@ class HomeFragment : BaseFragment() {
     private lateinit var homeViewModel: HomeViewModel
 
     private lateinit var mView: View
+
+    private lateinit var customViewLoader: CustomViewLoader
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,20 +41,21 @@ class HomeFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        customViewLoader = CustomViewLoader()
         mView = view
         attachObservers()
         allClicks()
     }
 
-    private fun allClicks(){
+    private fun allClicks() {
         homeBinding.btLogout.setOnClickListener {
             homeViewModel.userLogout(SharedPrefs.getStringFromSharedPrefs(Constants.TOKEN))
         }
     }
 
-    private fun attachObservers(){
-        homeViewModel.logoutResponse.observe(viewLifecycleOwner){
-            if(it){
+    private fun attachObservers() {
+        homeViewModel.logoutResponse.observe(viewLifecycleOwner) {
+            if (it) {
                 callActivity(activity as AppCompatActivity, AuthActivity())
                 SharedPrefs.setBoolean(isLog = false, isWel = true)
                 SharedPrefs.setString(Constants.DATA, "null")
@@ -65,18 +69,12 @@ class HomeFragment : BaseFragment() {
             }
         }
 
-        homeViewModel.isLoading.observe(viewLifecycleOwner){
+        homeViewModel.isLoading.observe(viewLifecycleOwner) {
             it?.let {
                 if (it) {
-                    /**
-                     * loader to be done
-                     **/
-//                    customViewLoader.loader(requireContext())
+                    customViewLoader.loader(requireContext())
                 } else {
-                    /**
-                     * loader to be done
-                     **/
-//                    customViewLoader.loaderDisable()
+                    customViewLoader.loaderDisable()
                 }
             }
         }

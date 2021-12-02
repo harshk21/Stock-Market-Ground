@@ -3,11 +3,11 @@ package com.smg.stock_market_ground.ui.fragments.dashboardFragments.home
 import androidx.lifecycle.MutableLiveData
 import com.smg.stock_market_ground.base.BaseViewModel
 
-class HomeViewModel: BaseViewModel() {
+class HomeViewModel : BaseViewModel() {
 
     val logoutResponse = MutableLiveData<Boolean>()
 
-    fun userLogout(token: String){
+    fun userLogout(token: String) {
         isLoading.value = true
         HomeRepo.logoutUser(success = {
             isLoading.value = false

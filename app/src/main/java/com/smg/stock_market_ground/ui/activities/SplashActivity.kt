@@ -2,12 +2,12 @@ package com.smg.stock_market_ground.ui.activities
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import com.smg.stock_market_ground.base.BaseActivity
 import com.smg.stock_market_ground.databinding.ActivitySplashBinding
 import com.smg.stock_market_ground.utils.Constants
 import com.smg.stock_market_ground.utils.SharedPrefs
 import com.smg.stock_market_ground.utils.SharedPrefs.Companion.getBoolean
 import com.smg.stock_market_ground.utils.startActivity
-import com.smg.stock_market_ground.base.BaseActivity
 import java.util.*
 
 @SuppressLint("CustomSplashScreen")
@@ -31,10 +31,10 @@ class SplashActivity : BaseActivity() {
         }
         mComeFromWelcome = getBoolean(Constants.WELCOME_CHECK)
         mCheckForLogIn = getBoolean(Constants.USER_CHECK)
-        if(mCheckForLogIn == true){
+        if (mCheckForLogIn == true) {
             startActivity<DashBoardActivity>()
             finishAffinity()
-        }else{
+        } else {
             splashTime()
         }
     }
@@ -47,6 +47,7 @@ class SplashActivity : BaseActivity() {
             }
         }, Constants.SPLASH_TIME)
     }
+
     override fun onDestroy() {
         super.onDestroy()
         mComeFromWelcome = false

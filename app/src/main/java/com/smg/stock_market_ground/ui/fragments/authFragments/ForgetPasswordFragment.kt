@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.smg.stock_market_ground.databinding.FragmentForgetPasswordBinding
 import com.smg.stock_market_ground.utils.Constants
+import com.smg.stock_market_ground.utils.customViews.customLoader.CustomViewLoader
 import com.smg.stock_market_ground.utils.makeSnackBar
 
 
@@ -17,6 +18,8 @@ class ForgetPasswordFragment : Fragment() {
     private lateinit var bindingForget: FragmentForgetPasswordBinding
 
     private lateinit var mViewModel: AuthViewModel
+
+    private lateinit var customViewLoader: CustomViewLoader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,7 @@ class ForgetPasswordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        customViewLoader = CustomViewLoader()
         allClicks()
         attachObservers()
     }
@@ -48,25 +52,19 @@ class ForgetPasswordFragment : Fragment() {
         }
     }
 
-    private fun attachObservers(){
-        mViewModel.passwordResetResponse.observe(viewLifecycleOwner){
-            if(it){
+    private fun attachObservers() {
+        mViewModel.passwordResetResponse.observe(viewLifecycleOwner) {
+            if (it) {
                 makeSnackBar(bindingForget.root, Constants.SENT_MAIL)
             }
         }
 
-        mViewModel.isLoading.observe(viewLifecycleOwner){
+        mViewModel.isLoading.observe(viewLifecycleOwner) {
             it?.let {
                 if (it) {
-                    /**
-                     * loader to be done
-                     **/
-//                    customViewLoader.loader(requireContext())
+                    customViewLoader.loader(requireContext())
                 } else {
-                    /**
-                     * loader to be done
-                     **/
-//                    customViewLoader.loaderDisable()
+                    customViewLoader.loaderDisable()
                 }
             }
         }

@@ -16,7 +16,8 @@ class DashBoardActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dashBoardBinding = ActivityDashBoardBinding.inflate(layoutInflater)
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_dashboard_navigation) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_dashboard_navigation) as NavHostFragment
         navCon = navHostFragment.navController
         dashBoardBinding.bottomNavigationView.setupWithNavController(navCon)
         dashBoardBinding.root.apply {

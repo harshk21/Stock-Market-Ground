@@ -22,14 +22,14 @@ class SharedPrefs(context: Context) {
             sharedPreferences.edit().putBoolean(Constants.WELCOME_CHECK, isWel).apply()
             sharedPreferences.edit().putBoolean(Constants.USER_CHECK, isLog).apply()
         }
+
         fun setBoolean(isDiscover: Boolean, isSaved: Boolean, int: Int) {
             sharedPreferences.edit().putBoolean(Constants.IS_DISCOVER, isDiscover).apply()
             sharedPreferences.edit().putBoolean(Constants.IS_SAVED, isSaved).apply()
         }
 
 
-
-        fun setString(type: String,data:String) {
+        fun setString(type: String, data: String) {
             sharedPreferences.edit().putString(type, data).apply()
         }
 

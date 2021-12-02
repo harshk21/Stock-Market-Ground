@@ -11,7 +11,7 @@ object HomeRepo {
 
     fun logoutUser(
         success: (ResponseBody) -> Unit,
-        failure: (Throwable) ->Unit,
+        failure: (Throwable) -> Unit,
         token: String
     ) {
         apiService.userLogout(token).enqueue(object : Callback<ResponseBody> {

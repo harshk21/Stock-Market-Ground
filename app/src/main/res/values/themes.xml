@@ -22,4 +22,8 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="WhiteAccent" parent="Theme.MaterialComponents.Dialog">
+        <item name="colorAccent">@color/colorPrimaryDark</item> <!-- Whatever color you want-->
+    </style>
+
 </resources>

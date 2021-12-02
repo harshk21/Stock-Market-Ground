@@ -16,6 +16,7 @@ import com.smg.stock_market_ground.ui.activities.DashBoardActivity
 import com.smg.stock_market_ground.utils.Constants
 import com.smg.stock_market_ground.utils.SharedPrefs.Companion.setBoolean
 import com.smg.stock_market_ground.utils.SharedPrefs.Companion.setString
+import com.smg.stock_market_ground.utils.customViews.customLoader.CustomViewLoader
 import com.smg.stock_market_ground.utils.makeSnackBar
 import java.util.regex.Pattern
 
@@ -28,6 +29,8 @@ class LogInFragment : BaseFragment() {
     private lateinit var map: HashMap<String, String>
 
     private lateinit var mView: View
+
+    private lateinit var customViewLoader: CustomViewLoader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +50,7 @@ class LogInFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        customViewLoader = CustomViewLoader()
         mView = view
         allClicks()
     }
@@ -122,15 +126,9 @@ class LogInFragment : BaseFragment() {
         mViewModel.isLoading.observe(this) {
             it?.let {
                 if (it) {
-                    /**
-                     * loader to be done
-                     **/
-//                    customViewLoader.loader(requireContext())
+                    customViewLoader.loader(requireContext())
                 } else {
-                    /**
-                     * loader to be done
-                     **/
-//                    customViewLoader.loaderDisable()
+                    customViewLoader.loaderDisable()
                 }
             }
         }

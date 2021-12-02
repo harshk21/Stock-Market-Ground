@@ -1,8 +1,8 @@
 package com.smg.stock_market_ground.ui.activities
 
 import android.os.Bundle
-import com.smg.stock_market_ground.databinding.ActivityAuthBinding
 import com.smg.stock_market_ground.base.BaseActivity
+import com.smg.stock_market_ground.databinding.ActivityAuthBinding
 
 class AuthActivity : BaseActivity() {
 

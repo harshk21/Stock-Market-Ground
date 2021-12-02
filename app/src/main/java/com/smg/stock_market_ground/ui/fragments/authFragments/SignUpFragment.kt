@@ -11,6 +11,7 @@ import com.smg.stock_market_ground.R
 import com.smg.stock_market_ground.base.BaseFragment
 import com.smg.stock_market_ground.databinding.FragmentSignUpBinding
 import com.smg.stock_market_ground.utils.Constants
+import com.smg.stock_market_ground.utils.customViews.customLoader.CustomViewLoader
 import com.smg.stock_market_ground.utils.makeSnackBar
 import java.util.regex.Pattern
 
@@ -24,6 +25,8 @@ class SignUpFragment : BaseFragment() {
     private lateinit var mViewModel: AuthViewModel
 
     private lateinit var map: HashMap<String, String>
+
+    private lateinit var customViewLoader: CustomViewLoader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,7 @@ class SignUpFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        customViewLoader = CustomViewLoader()
         mView = view
         allClicks()
     }
@@ -51,50 +55,46 @@ class SignUpFragment : BaseFragment() {
             it.findNavController().navigateUp()
         }
 
-        signUpBinding.btSignUp.setOnClickListener{
+        signUpBinding.btSignUp.setOnClickListener {
             signUp()
         }
     }
+
     private fun attachObserver() {
 
         mViewModel.signUpResponse.observe(this) { response ->
             response?.let {
-                if(response.userStatus == "ENABLED"){
-                    makeSnackBar(mView,"Welcome ${response.name}, Please Login to proceed.")
+                if (response.userStatus == "ENABLED") {
+                    makeSnackBar(mView, "Welcome ${response.name}, Please Login to proceed.")
                     mView.findNavController().navigate(R.id.logInFragment)
                 }
             }
         }
         mViewModel.apiErrorResponse.observe(this) {
             it?.let {
-                makeSnackBar(mView,it)
+                makeSnackBar(mView, it)
             }
         }
         mViewModel.isLoading.observe(this) {
             it?.let {
                 if (it) {
-                    /**
-                     * loader to be done
-                     **/
-//                    customViewLoader.loader(requireContext())
+                    customViewLoader.loader(requireContext())
                 } else {
-                    /**
-                     * loader to be done
-                     **/
-//                    customViewLoader.loaderDisable()
+                    customViewLoader.loaderDisable()
                 }
             }
         }
 
 
     }
+
     private fun signUp() {
         val fName = signUpBinding.edtFirstName.text.toString()
         val lName = signUpBinding.edtLastName.text.toString()
         val email = signUpBinding.edtEmailSignup.text.toString()
         val password = signUpBinding.edtPasswordSignup.text.toString()
-        if (validation(fName,lName,email, password)) {
-            initData(fName, lName,email, password)
+        if (validation(fName, lName, email, password)) {
+            initData(fName, lName, email, password)
             mViewModel.signUp(map)
         }
 
@@ -107,32 +107,32 @@ class SignUpFragment : BaseFragment() {
                     val pattern = Pattern.compile(Constants.PASSWORD_REGEX)
                     if (password.isNotEmpty()) {
                         pattern.matcher(password)
-                        return if(signUpBinding.cbKeepMe.isChecked && signUpBinding.cbTermsAgree.isChecked){
+                        return if (signUpBinding.cbKeepMe.isChecked && signUpBinding.cbTermsAgree.isChecked) {
                             true
-                        }else{
-                            makeSnackBar(mView,"Please Agree to terms and Conditions")
+                        } else {
+                            makeSnackBar(mView, "Please Agree to terms and Conditions")
                             false
                         }
                     } else {
-                        makeSnackBar(mView,"Password cannot be empty")
+                        makeSnackBar(mView, "Password cannot be empty")
                         false
                     }
                 } else {
-                    makeSnackBar(mView,"Enter a valid email address")
+                    makeSnackBar(mView, "Enter a valid email address")
                     false
                 }
             } else {
-                makeSnackBar(mView,"Please enter email")
+                makeSnackBar(mView, "Please enter email")
                 return false
             }
         } else {
-            makeSnackBar(mView,"Firstname or last name cannot be empty")
+            makeSnackBar(mView, "Firstname or last name cannot be empty")
             return false
         }
     }
 
     private fun initData(firstName: String, lastName: String, email: String, password: String) {
-        val name  = firstName + lastName
+        val name = firstName + lastName
         map = HashMap()
         map["name"] = name
         map["last_name"] = lastName

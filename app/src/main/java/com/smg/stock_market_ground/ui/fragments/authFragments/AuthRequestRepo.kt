@@ -12,7 +12,7 @@ object AuthRequestRepo {
 
     fun registerUser(
         success: (UsersModel) -> Unit,
-        failure: (Throwable) ->Unit,
+        failure: (Throwable) -> Unit,
         map: HashMap<String, String>
     ) {
         apiService.userRegister(map).enqueue(object : Callback<UsersModel> {
@@ -31,7 +31,7 @@ object AuthRequestRepo {
 
     fun loginUser(
         success: (UsersModel) -> Unit,
-        failure: (Throwable) ->Unit,
+        failure: (Throwable) -> Unit,
         map: HashMap<String, String>
     ) {
         apiService.userLogin(map).enqueue(object : Callback<UsersModel> {
@@ -51,7 +51,7 @@ object AuthRequestRepo {
 
     fun passwordReset(
         success: (ResponseBody) -> Unit,
-        failure: (Throwable) ->Unit,
+        failure: (Throwable) -> Unit,
         email: String
     ) {
         apiService.passwordReset(email).enqueue(object : Callback<ResponseBody> {

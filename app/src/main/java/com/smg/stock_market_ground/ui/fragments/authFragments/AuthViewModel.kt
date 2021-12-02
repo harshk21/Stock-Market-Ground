@@ -35,7 +35,7 @@ class AuthViewModel : BaseViewModel() {
         }, map)
     }
 
-    fun passwordReset(email: String){
+    fun passwordReset(email: String) {
         isLoading.value = true
         AuthRequestRepo.passwordReset({
             isLoading.value = false
@@ -43,9 +43,8 @@ class AuthViewModel : BaseViewModel() {
         }, failure = {
             isLoading.value = false
             passwordResetResponse.value = false
-        },email)
+        }, email)
     }
-
 
 
 }

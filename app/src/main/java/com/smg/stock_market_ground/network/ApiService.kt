@@ -13,9 +13,9 @@ interface ApiService {
     fun userLogin(@Body map: HashMap<String, String>): Call<UsersModel>
 
     @GET("users/logout")
-    fun userLogout(@Header("user-token") token:String): Call<ResponseBody>
+    fun userLogout(@Header("user-token") token: String): Call<ResponseBody>
 
     @GET("users/restorepassword/{email}")
-    fun passwordReset(@Path("email") email:String): Call<ResponseBody>
+    fun passwordReset(@Path("email") email: String): Call<ResponseBody>
 
 }
