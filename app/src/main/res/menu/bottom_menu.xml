@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/arenaFragment"
+        android:icon="@drawable/ic_arena"
+        android:title="@string/arena" />
+    <item
+        android:id="@+id/stocksFragment"
+        android:icon="@drawable/ic_stcoks"
+        android:title="@string/stocks" />
+    <item
+        android:id="@+id/portfolioFragment"
+        android:icon="@drawable/ic_portfolio"
+        android:title="@string/portfolio" />
+</menu>

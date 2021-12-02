@@ -1,4 +1,4 @@
-package com.smg.stock_market_ground.ui.fragments.dashboardFragments
+package com.smg.stock_market_ground.ui.fragments.dashboardFragments.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

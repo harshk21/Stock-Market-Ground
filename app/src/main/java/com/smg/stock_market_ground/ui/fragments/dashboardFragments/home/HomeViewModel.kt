@@ -1,4 +1,4 @@
-package com.smg.stock_market_ground.ui.fragments.dashboardFragments
+package com.smg.stock_market_ground.ui.fragments.dashboardFragments.home
 
 import androidx.lifecycle.MutableLiveData
 import com.smg.stock_market_ground.base.BaseViewModel
@@ -16,7 +16,7 @@ class HomeViewModel: BaseViewModel() {
             isLoading.value = false
             logoutResponse.value = false
             apiErrorResponse.value = it.message
-        },token)
+        }, token)
     }
 
 

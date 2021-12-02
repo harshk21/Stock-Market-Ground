@@ -1,4 +1,4 @@
-package com.smg.stock_market_ground.ui.fragments.dashboardFragments
+package com.smg.stock_market_ground.ui.fragments.dashboardFragments.home
 
 import com.smg.stock_market_ground.network.ApiRequests
 import okhttp3.ResponseBody

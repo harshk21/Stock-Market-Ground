@@ -7,7 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.smg.stock_market_ground.ui.fragments.dashboardFragments.HomeFragment"
+        android:name="com.smg.stock_market_ground.ui.fragments.dashboardFragments.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/arenaFragment"
+        android:name="com.smg.stock_market_ground.ui.fragments.dashboardFragments.arena.ArenaFragment"
+        android:label="fragment_arena"
+        tools:layout="@layout/fragment_arena" />
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="com.smg.stock_market_ground.ui.fragments.dashboardFragments.portfolio.PortfolioFragment"
+        android:label="fragment_portfolio"
+        tools:layout="@layout/fragment_portfolio" />
+    <fragment
+        android:id="@+id/stocksFragment"
+        android:name="com.smg.stock_market_ground.ui.fragments.dashboardFragments.stocks.StocksFragment"
+        android:label="fragment_stocks"
+        tools:layout="@layout/fragment_stocks" />
 </navigation>
