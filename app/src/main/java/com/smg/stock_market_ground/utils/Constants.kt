@@ -2,7 +2,7 @@ package com.smg.stock_market_ground.utils
 
 object Constants {
     const val BASE_URL =
-        "https://steamydowntown.backendless.app/api/1F3BD37D-C680-03E0-FFF0-70ADEE9F3E00/C40B514B-7D5D-4244-98FC-1E0BE150631D/"
+        "https://rapidbasin.backendless.app/api/CE77BD7D-D6C4-A46E-FF90-86512A008600/454E7827-3DB4-4DE9-ACAE-DBA83E69AC78/"
     const val SPLASH_TIME: Long = 2500
     const val PASSWORD_REGEX = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$"
     const val TOKEN = "token"

@@ -24,5 +24,16 @@
     <string name="arena">Arena</string>
     <string name="portfolio">Portfolio</string>
     <string name="stocks">Stocks</string>
-    <string name="please_wait">Please Wait...</string>
+    <string name="please_wait">Please Wait…</string>
+    <string name="thursday_maestro">Thursday Maestro</string>
+    <string name="dateFormat">03 jun 2021 | 09:35 AM</string>
+    <string name="prize">Prize</string>
+    <string name="dummyNum">₹ 1,05,987</string>
+    <string name="entry">Entry</string>
+    <string name="leftTxt">Left: 1123</string>
+    <string name="maxTxt">Max: 1200</string>
+    <string name="timeTxt">12 hr 48 min left</string>
+    <string name="daily">Daily</string>
+    <string name="mega">Mega</string>
+    <string name="_11">₹ 11</string>
 </resources>

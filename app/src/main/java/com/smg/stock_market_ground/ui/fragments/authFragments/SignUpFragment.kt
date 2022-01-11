@@ -15,7 +15,6 @@ import com.smg.stock_market_ground.utils.customViews.customLoader.CustomViewLoad
 import com.smg.stock_market_ground.utils.makeSnackBar
 import java.util.regex.Pattern
 
-
 class SignUpFragment : BaseFragment() {
 
     private lateinit var signUpBinding: FragmentSignUpBinding
@@ -84,8 +83,6 @@ class SignUpFragment : BaseFragment() {
                 }
             }
         }
-
-
     }
 
     private fun signUp() {
@@ -97,7 +94,6 @@ class SignUpFragment : BaseFragment() {
             initData(fName, lName, email, password)
             mViewModel.signUp(map)
         }
-
     }
 
     private fun validation(fName: String, lName: String, email: String, password: String): Boolean {
